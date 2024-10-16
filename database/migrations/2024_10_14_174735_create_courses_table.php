@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string("name");
             $table->foreignId("branch_id")->constrained();
-            $table->json("moduls");
+            $table->unsignedTinyInteger("duration");
             $table->integer("price");
             $table->timestamps();
         });
