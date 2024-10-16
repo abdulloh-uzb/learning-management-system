@@ -13,13 +13,9 @@ class CourseController extends Controller
         return view("courses.index", $courses);
     }
 
-    public function create()
-    {
-        return view("course.create");
-    }
-
     public function store(StoreCourseRequest $request)
     {
+        dd($request->all());
         $validated = $request->validate();
         Course::create($validated);
         return redirect()->route("courses.index")->with("success", "Course successfully created!");
@@ -32,7 +28,7 @@ class CourseController extends Controller
 
     public function update()
     {
-
+        
     }
 
     public function show(Course $course)
