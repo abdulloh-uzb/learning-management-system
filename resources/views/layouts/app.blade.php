@@ -9,7 +9,7 @@
     <meta name="author" content="" />
     <title>LMS</title>
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
-    <link href="css/styles.css" rel="stylesheet" />
+    <link href="/css/styles.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 </head>
 
@@ -49,7 +49,7 @@
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                             Dashboard
                         </a>
-                        <a class="nav-link" href="{{route('branches')}}">
+                        <a class="nav-link" href="{{route('branches.index')}}">
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                             Филиаллар
                         </a>
@@ -60,18 +60,18 @@
                         </a>
                         <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="{{route('courses')}}">Курслар</a>
-                                <a class="nav-link" href="{{route('groups')}}">Гурухлар</a>
-                                <a class="nav-link" href="{{route('students')}}">Ўқувчилар</a>
-                                <a class="nav-link" href="{{route('teachers')}}">Ўқитувчилар</a>
-                                <a class="nav-link" href="{{route('payment-history')}}">Тўловлар тариҳи</a>
-                                <a class="nav-link" href="{{route('expenses')}}">Чикимлар</a>
-                                <a class="nav-link" href="{{route('monthly-reports')}}">Ойлик хисоб-китоб</a>
-                                <a class="nav-link" href="{{route('sms')}}">СМС хабарнома</a>
+                                <a class="nav-link" href="{{route('courses.index')}}">Курслар</a>
+                                <a class="nav-link" href="{{route('groups.index')}}">Гурухлар</a>
+                                <a class="nav-link" href="{{route('students.index')}}">Ўқувчилар</a>
+                                <a class="nav-link" href="{{route('teachers.index')}}">Ўқитувчилар</a>
+                                <a class="nav-link" href="">Тўловлар тариҳи</a>
+                                 <a class="nav-link" href="">Чикимлар</a> 
+                                 <a class="nav-link" href="">Ойлик хисоб-китоб</a>
+                                 <a class="nav-link" href="">СМС хабарнома</a>  
 
                             </nav>
                         </div>
-                        <a class="nav-link" href="{{route('reports')}}">
+                        <a class="nav-link" href="">
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                             Ҳисоботлар
                         </a>
@@ -104,12 +104,12 @@
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-    <script src="js/scripts.js"></script>
+    <script src="/js/scripts.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
-    <script src="assets/demo/chart-area-demo.js"></script>
-    <script src="assets/demo/chart-bar-demo.js"></script>
+    <script src="/assets/demo/chart-area-demo.js"></script>
+    <script src="/assets/demo/chart-bar-demo.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
-    <script src="js/datatables-simple-demo.js"></script>
+    <script src="/js/datatables-simple-demo.js"></script>
 </body>
 
 </html>
