@@ -4,7 +4,6 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-use function PHPSTORM_META\map;
 
 class StoreCourseRequest extends FormRequest
 {
@@ -26,7 +25,7 @@ class StoreCourseRequest extends FormRequest
         return [
             "name" => "required|max:255",
             "branch_id" => "required|exists:branches,id",
-            "moduls" => "required|json",
+            "duration" => "required|numeric|min:3",
             "price" => "required|numeric|min:0"
         ];
     }
