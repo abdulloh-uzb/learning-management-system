@@ -11,8 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('branches', function (Blueprint $table) {
+        Schema::create('group_students', function (Blueprint $table) {
             $table->id();
+            $table->foreignId("group_id")->constrained();
+            $table->foreignId("student_id")->constrained("users");
             $table->timestamps();
         });
     }
@@ -22,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('branches');
+        Schema::dropIfExists('group_students');
     }
 };
