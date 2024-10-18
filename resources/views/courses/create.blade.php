@@ -10,24 +10,24 @@
                 <div class="modal-body">
                     <select class="form-select mb-2" name="branch_id">
                         <option selected>Филиал танланг</option>
-                        <option value="1">Чилонзор</option>
-                        <option value="2">Сергели</option>
-                        <option value="3">Юнусобод</option>
+                        @foreach($branches as $branch)
+                            <option value="{{$branch->id}}">{{$branch->name}}</option>
+                        @endforeach
                     </select>
                     <div class="input-group mb-2">
-                    <input type="text" placeholder="Курс номи" class="form-control" name="name">
+                        <input type="text" placeholder="Курс номи" class="form-control" name="name">
 
                     </div>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="input-group">
-                            <input type="text" name="price" placeholder="0" class="form-control">
-                            <span class="input-group-text" id="basic-addon2">сўм</span>
+                                <input type="text" name="price" placeholder="0" class="form-control">
+                                <span class="input-group-text" id="basic-addon2">сўм</span>
 
                             </div>
                         </div>
 
-                        <div class="col-md-6"> 
+                        <div class="col-md-6">
                             <input type="number" name="duration" placeholder="Курс давомийлиги" class="form-control ml-2">
                         </div>
                     </div>

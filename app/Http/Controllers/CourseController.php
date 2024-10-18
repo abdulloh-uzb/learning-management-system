@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreCourseRequest;
+use App\Models\Branch;
 use App\Models\Course;
 
 class CourseController extends Controller
@@ -10,15 +11,14 @@ class CourseController extends Controller
     public function index()
     {
         $courses = Course::all();
-        return view("courses.index", $courses);
+        $branches = Branch::all();
+        return view("courses.index", compact("courses","branches"));
     }
 
     public function store(StoreCourseRequest $request)
     {
-        dd($request->all());
-        $validated = $request->validate();
-        Course::create($validated);
-        return redirect()->route("courses.index")->with("success", "Course successfully created!");
+        Course::create($request->validated());
+        return redirect()->back()->with("message", "success");
     }
 
     public function edit(Course $course)

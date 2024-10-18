@@ -25,7 +25,7 @@ class StoreCourseRequest extends FormRequest
         return [
             "name" => "required|max:255",
             "branch_id" => "required|exists:branches,id",
-            "duration" => "required|numeric|min:3",
+            "duration" => "required|numeric",
             "price" => "required|numeric|min:0"
         ];
     }
