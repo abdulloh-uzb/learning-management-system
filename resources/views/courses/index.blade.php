@@ -5,7 +5,7 @@
 
         <div class="card-body">
             <div class="datatable-wrapper datatable-loading no-footer sortable searchable fixed-columns">
-             
+
                 <div class="datatable-container">
                     <table id="datatablesSimple">
                         <thead>
@@ -14,7 +14,7 @@
                                     <a href="#">ID</a>
                                 </th>
                                 <th data-sortable="true" style="width: 30.362116991643457%;">
-                                    <a href="#" class="datatable-sorter">Курс номи</a>
+                                    <a href="#">Курс номи</a>
                                 </th>
                                 <th data-sortable="true" aria-sort="descending" class="datatable-descending" style="width: 14.832869080779945%;">
                                     <a href="#">Курс нарҳи</a>
@@ -30,11 +30,15 @@
                             <tr data-index="0">
                                 <td>{{$course->id}}</td>
                                 <td>{{$course->name}}</td>
-                                <td>{{number_format($course->price, 0, "", " ")}} сўм</td>
+                                <td>{{number_format($course->price, 0, "", " ")}}</td>
                                 <td>150</td>
                                 <td>
                                     <a class="btn btn-warning">Таҳрирлаш</a>
-                                    <a class="btn btn-danger">Ўчириш</a>
+                                    <form action="{{route('courses.destroy', $course->id)}}" method="POST" class="d-inline-block">
+                                        @csrf
+                                        @method("DELETE")
+                                        <button class="btn btn-danger">Ўчириш</button>
+                                    </form>
                                     <a class="btn btn-primary">Нусҳа олиш</a>
 
                                 </td>
@@ -43,7 +47,7 @@
                         </tbody>
                     </table>
                 </div>
-                
+
             </div>
         </div>
     </div>
