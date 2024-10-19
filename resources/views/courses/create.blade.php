@@ -11,12 +11,11 @@
                     <select class="form-select mb-2" name="branch_id">
                         <option selected>Филиал танланг</option>
                         @foreach($branches as $branch)
-                            <option value="{{$branch->id}}">{{$branch->name}}</option>
+                        <option value="{{$branch->id}}">{{$branch->name}}</option>
                         @endforeach
                     </select>
                     <div class="input-group mb-2">
                         <input type="text" placeholder="Курс номи" class="form-control" name="name">
-
                     </div>
                     <div class="row">
                         <div class="col-md-6">
@@ -36,9 +35,10 @@
 
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary">Сақлаш</button>
+                    <button type="submit" class="btn btn-primary" id="button">Сақлаш</button>
                 </div>
             </form>
         </div>
     </div>
 </div>
+

@@ -2,6 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreGroupRequest;
+use App\Models\Branch;
+use App\Models\Course;
+use App\Models\Group;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class GroupController extends Controller
@@ -11,23 +16,20 @@ class GroupController extends Controller
      */
     public function index()
     {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
+        $groups = Group::all();
+        $courses = Course::all(['id', 'name']);
+        $branches = Branch::all(['id', 'name']);
+        $teachers = User::all(["id", "full_name"]);
+        return view("groups.index", compact("groups", "courses", "branches", "teachers"));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreGroupRequest $request)
     {
-        //
+        Group::create($request->validated());
+        return redirect()->back()->with("message", "success");
     }
 
     /**
