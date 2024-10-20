@@ -26,6 +26,8 @@ Route::prefix("dashboard")->group(function(){
         return "payment page";
     })->name("payment-history");
 
+    Route::get("/get-courses/{id}", [CourseController::class, "getCoursesByBranchId"]);
+
 });
 
 Route::middleware('auth')->group(function () {

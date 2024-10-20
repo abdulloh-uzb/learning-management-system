@@ -17,10 +17,9 @@ class GroupController extends Controller
     public function index()
     {
         $groups = Group::all();
-        $courses = Course::all(['id', 'name']);
         $branches = Branch::all(['id', 'name']);
         $teachers = User::all(["id", "full_name"]);
-        return view("groups.index", compact("groups", "courses", "branches", "teachers"));
+        return view("groups.index", compact("groups", "branches", "teachers"));
     }
 
     /**

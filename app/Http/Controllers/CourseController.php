@@ -41,5 +41,10 @@ class CourseController extends Controller
         $course->delete();
         return redirect()->back()->with("success", "Course successfully deleted!");
     }
-    
+ 
+    public function getCoursesByBranchId($id)
+    {
+        $courses = Course::where('branch_id', $id)->get(["id", "name"]);
+        return response()->json($courses);
+    }
 }

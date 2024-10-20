@@ -1,5 +1,7 @@
 <x-app-layout>
-
+    <x-slot:title>
+        Guruhlar
+    </x-slot>
     <button type="button" class="btn btn-success my-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Гуруҳ кўшиш</button>
     <div class="card mb-4">
 
@@ -31,11 +33,11 @@
                             <tr data-index="0">
                                 <td>{{$group->id}}</td>
                                 <td>{{$group->name}}</td>
-                                <td>{{number_format($course->price, 0, "", " ")}}</td>
-                                <td>150</td>
+                                <td>{{$group->course_id}}</td>
+                                <td>{{$group->students_count}}</td>
                                 <td>
                                     <a class="btn btn-warning">Таҳрирлаш</a>
-                                    <form action="{{route('courses.destroy', $group->id)}}" method="POST" class="d-inline-block">
+                                    <form action="{{route('groups.destroy', $group->id)}}" method="POST" class="d-inline-block">
                                         @csrf
                                         @method("DELETE")
                                         <button class="btn btn-danger">Ўчириш</button>
@@ -55,8 +57,7 @@
 
     @include('groups.create', 
     [
-        "branches" => $branches,
-        "courses" => $courses
+        "branches" => $branches
     ])
 
 
