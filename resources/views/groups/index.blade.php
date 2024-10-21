@@ -33,7 +33,7 @@
                             <tr data-index="0">
                                 <td>{{$group->id}}</td>
                                 <td>{{$group->name}}</td>
-                                <td>{{$group->course_id}}</td>
+                                <td>{{$group->course->name}}</td>
                                 <td>{{$group->students_count}}</td>
                                 <td>
                                     <a class="btn btn-warning" href="groups">Таҳрирлаш</a>
