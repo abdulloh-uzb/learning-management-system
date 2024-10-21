@@ -107,7 +107,7 @@
             
         });
 
-        $('form').on('submit', function(){
+        $('#form').on('submit', function(){
             event.preventDefault();
             data = {
                 name: $("#name").val(),

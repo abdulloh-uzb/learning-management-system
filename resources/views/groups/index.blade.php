@@ -36,11 +36,11 @@
                                 <td>{{$group->course_id}}</td>
                                 <td>{{$group->students_count}}</td>
                                 <td>
-                                    <a class="btn btn-warning">Таҳрирлаш</a>
+                                    <a class="btn btn-warning" href="groups">Таҳрирлаш</a>
                                     <form action="{{route('groups.destroy', $group->id)}}" method="POST" class="d-inline-block">
-                                        @csrf
                                         @method("DELETE")
-                                        <button class="btn btn-danger">Ўчириш</button>
+                                        @csrf
+                                        <button type="submit" class="btn btn-danger">Ўчириш</button>
                                     </form>
                                     <a class="btn btn-primary">Нусҳа олиш</a>
 
