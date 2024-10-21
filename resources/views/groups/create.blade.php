@@ -5,7 +5,7 @@
                 <h5 class="modal-title" id="exampleModalLabel">Гуруҳ кўшиш</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="{{route('groups.store')}}" method="POST">
+            <form action="{{route('groups.store')}}" method="POST" id="form">
                 @csrf
                 <div class="modal-body">
                     <div class="input-group mb-2">
@@ -129,8 +129,8 @@
                 data: data,
                 dataType: "json",
                 success: function(data){
-                    console.log("ishladi");
-                    console.log(data);
+                    $('#exampleModal').modal('hide'); // Hide the modal
+                    $('#form').trigger("reset");
                 },
                 error: function(data){
                     console.log("ishlamadi");

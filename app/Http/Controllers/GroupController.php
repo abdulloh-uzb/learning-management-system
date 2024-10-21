@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreGroupRequest;
 use App\Models\Branch;
-use App\Models\Course;
 use App\Models\Group;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -28,6 +27,13 @@ class GroupController extends Controller
     public function store(StoreGroupRequest $request)
     {
         Group::create($request->validated());
+
+        if($request->expectsJson()){
+            return response()->json([
+                "message" => "success"
+            ]);
+        }
+
         return redirect()->back()->with("message", "success");
     }
 
@@ -36,7 +42,7 @@ class GroupController extends Controller
      */
     public function show(string $id)
     {
-        //
+        
     }
 
     /**
